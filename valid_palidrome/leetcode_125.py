@@ -20,3 +20,4 @@ class Solution:
 if __name__ == '__main__':
     sol = Solution()
     print(sol.isPalindrome("A man, a plan, a canal, Panama!"))
+
