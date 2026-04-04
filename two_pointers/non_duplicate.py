@@ -1,19 +1,19 @@
 class Solution:
-    def moveElements(self, arr):
+    def remove(self, arr, key):
+        nextElement = 0
 
-        next_non_duplicate = 1
-        i = 0
+        for i in range(len(arr)):
+            if arr[i] != key:
+                arr[nextElement] = arr[i]
+                nextElement += 1
 
-        while i < len(arr):
-            if arr[next_non_duplicate - 1] != arr[i]:
-                arr[next_non_duplicate] = arr[i]
+        return nextElement
 
-                next_non_duplicate += 1
-            i += 1
-        return next_non_duplicate
 
 def main():
     sol = Solution()
-    print(sol.moveElements([2, 3, 3, 3, 6, 9, 9]))
+
+    # Test case 1
+    print("Array new length: " + str(sol.remove([3, 2, 3, 6, 3, 10, 9, 3], 3)))
 
 main()
