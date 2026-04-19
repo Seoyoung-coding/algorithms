@@ -9,7 +9,7 @@ class Solution:
             while left < right:
                 s = nums[i] + nums[left] + nums[right]
 
-                if abs(target - s) < abs(target - closest): # closest는 지금까지 찾은 값중 가장 가까운 합
+                if abs(target - s) < abs(target - closest):
                     closest = s
 
                 if s < target:
