@@ -1,30 +1,17 @@
 class Solution:
-    def makeSquares(self, arr):
-        n = len(arr)
-        squares = [0 for x in range(n)]
-
-        highestSquareIdx = n - 1
-
+    def sortedSquares(self, nums: list[int]) -> list[int]:
+        n = len(nums)
+        squares = [0] * n
         left, right = 0, n - 1
-        while left <= right:
-            leftSquare = arr[left] * arr[left]
-            rightSquare = arr[right] * arr[right]
+        index = n - 1
 
-            if leftSquare > rightSquare:
-                squares[highestSquareIdx] = leftSquare
+        while left <= right:
+            if abs(nums[left]) > abs(nums[right]):
+                squares[index] = nums[left] * nums[left]
                 left += 1
             else:
-                squares[highestSquareIdx] = rightSquare
+                squares[index] = nums[right] * nums[right]
                 right -= 1
-
-            highestSquareIdx -= 1
+            index -= 1
 
         return squares
-
-
-def main():
-    sol = Solution()
-    print("Squares: " + str(sol.makeSquares([-2, -1, 0, 2, 3])))
-    print("Squares: " + str(sol.makeSquares([-3, -1, 0, 1, 2])))
-
-main()
