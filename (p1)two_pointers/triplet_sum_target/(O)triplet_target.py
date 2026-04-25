@@ -12,9 +12,11 @@ class Solution:
                 if target_diff == 0:
                     return target_sum
 
+                # the second part of the following 'if' is to handle the smallest sum when we have
+                # more than one solution
                 if abs(target_diff) < abs(smallest_difference) \
                         or (abs(target_diff) == abs(smallest_difference) and target_diff > smallest_difference):
-                    smallest_difference = target_diff
+                    smallest_difference = target_diff  # save the closest and the biggest difference
 
                 if target_diff > 0:
                     left += 1
@@ -33,3 +35,4 @@ def main():
 
 
 main()
+
