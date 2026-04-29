@@ -11,7 +11,7 @@ class Solution:
         slow = head
         fast = head
 
-        while fast is not None and fast.next is not None:
+        while fast is not None and fast.next is not None: # fast 와 fast.next 를 해도 다음 수가 있을때를 확인
             slow = slow.next
             fast = fast.next.next
 
@@ -21,6 +21,7 @@ class Solution:
         if fast is None or fast.next is None:
             return None
 
+        # slow와 fast가 만날때까지 계속 돌리기 (사이클이 없다면 둘은 절대 만날수없음)
         slow = head
         while slow != fast:
             slow = slow.next
