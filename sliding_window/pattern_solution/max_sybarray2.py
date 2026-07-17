@@ -19,4 +19,5 @@ def main():
     print("Maximum sum of a subarray of size K: " +
           str(sol.findMaxSumSubArray(2, [2, 3, 4, 1, 5])))
 
+
 main()
